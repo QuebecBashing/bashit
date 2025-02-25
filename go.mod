@@ -5,5 +5,5 @@ go 1.22.7
 toolchain go1.23.0
 
 require (
-	golang.org/x/sys v0.29.1
+	golang.org/x/net v0.33.0
 )
