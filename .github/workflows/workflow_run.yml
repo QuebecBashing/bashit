@@ -5,7 +5,8 @@ on:
       - trigger
     types: [completed]
     
-permissions: {}
+permissions:
+  actions: read
 
 jobs:
   one:
