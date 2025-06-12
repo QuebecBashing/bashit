@@ -22,6 +22,6 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           run-id: ${{ github.event.workflow_run.id }}
-          github-token: $GH_TOKEN
+          github-token: ${{ github.token }}
       - run: ls -lR
       - run: bash test.sh
