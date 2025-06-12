@@ -16,8 +16,8 @@ jobs:
       GH_TOKEN: ${{ github.token }}
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
-      - name: Wait for artifact to be available
-        run: gh run download ${{ github.event.workflow_run.id }}
+      - uses: actions/checkout@v4
+      - run: gh run download ${{ github.event.workflow_run.id }}
       - uses: actions/download-artifact@v4
         with:
           run-id: ${{ github.event.workflow_run.id }}
