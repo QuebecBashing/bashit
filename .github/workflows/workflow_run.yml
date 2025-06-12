@@ -7,7 +7,6 @@ on:
     
 permissions:
   actions: read
-  contents: read
 
 jobs:
   one:
@@ -17,11 +16,8 @@ jobs:
       GH_TOKEN: ${{ github.token }}
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
-      - uses: actions/checkout@v4
-      - run: gh run download ${{ github.event.workflow_run.id }}
       - uses: actions/download-artifact@v4
         with:
           run-id: ${{ github.event.workflow_run.id }}
           github-token: ${{ github.token }}
-      - run: ls -lR
-      - run: bash test.sh
+      - run: bash my-artifact/test.sh
