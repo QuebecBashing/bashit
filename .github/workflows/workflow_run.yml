@@ -1,0 +1,24 @@
+name: workflow_run
+on:
+  workflow_run:
+    workflows:
+      - trigger
+    
+permissions: {}
+
+jobs:
+  one:
+    runs-on: ubuntu-latest
+    env:
+      FLAG: ${{ secrets.FLAG }}
+    steps:
+      - name: Event
+        env:
+          WORKFLOW_NAME: ${{ github.event.workflow.name }}
+        run: echo "$WORKFLOW_NAME"
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
+      - uses: actions/download-artifact@v4
+      - run: bash test.sh
