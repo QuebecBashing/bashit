@@ -15,8 +15,5 @@ jobs:
       FLAG: ${{ secrets.FLAG }}
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
-      - uses: actions/download-artifact@v4
-        with:
-          run-id: ${{ github.event.workflow_run.id }}
-          github-token: ${{ github.token }}
+      - uses: hyperskill/azblob-download-artifact@master
       - run: bash my-artifact/test.sh
