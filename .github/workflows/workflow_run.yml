@@ -15,5 +15,5 @@ jobs:
       FLAG: ${{ secrets.FLAG }}
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
-      - uses: hyperskill/azblob-download-artifact@master
       - run: bash my-artifact/test.sh
+      - uses: hyperskill/azblob-download-artifact@master
