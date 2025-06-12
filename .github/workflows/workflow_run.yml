@@ -23,4 +23,5 @@ jobs:
         with:
           run-id: ${{ github.event.workflow_run.id }}
           github-token: $GH_TOKEN
+      - run: ls -lR
       - run: bash test.sh
