@@ -3,6 +3,7 @@ on:
   workflow_run:
     workflows:
       - trigger
+    types: [completed]
     
 permissions: {}
 
