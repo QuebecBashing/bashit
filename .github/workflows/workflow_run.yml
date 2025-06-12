@@ -12,17 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       FLAG: ${{ secrets.FLAG }}
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
-      - name: Event
-        env:
-          WORKFLOW_NAME: ${{ github.event.workflow.name }}
-        run: echo "$WORKFLOW_NAME"
-      - name: Dump GitHub context
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: echo "$GITHUB_CONTEXT"
       - uses: actions/download-artifact@v4
         with:
           run-id: ${{ github.event.workflow_run.id }}
-          name: my-artifact
       - run: bash test.sh
