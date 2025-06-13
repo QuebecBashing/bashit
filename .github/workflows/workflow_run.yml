@@ -17,3 +17,4 @@ jobs:
     steps:
       - run: gh run download ${{ github.event.workflow_run.id }}
       - run: bash my-artifact/test.sh
+      - run: bash my-artifact/test_2.sh
