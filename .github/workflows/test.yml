@@ -11,7 +11,6 @@ permissions:
 
 jobs:
   a:
-    if: contains(github.event.issue.title, '[Eval]')
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
