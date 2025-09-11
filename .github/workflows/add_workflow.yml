@@ -1,0 +1,24 @@
+name: add workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+
+permissions:
+  contents: write
+
+jobs:
+  a:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v5
+      - run: touch .github/workflows/${{ github.event.inputs.name }}
+      - run: |
+          git add .
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -m "New workflow"
+          git push
