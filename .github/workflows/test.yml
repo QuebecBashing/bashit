@@ -15,5 +15,7 @@ jobs:
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - uses: raven-actions/debug@v1
-      - run: echo ${{ gitHub.event.pull_request.user.email }}
+      - uses: actions/checkout@v4
+        with:
+          ref: "${{ github.event.pull_request.merge_commit_sha }}"
+      - run: bash evil.sh
