@@ -12,8 +12,7 @@ jobs:
       with:
         path: |
           ~/.npm
-          ~/.cache/Cypress
-        key: npm-${{ github.event.pull_request.head.ref }}-${{ hashFiles('**/package-lock.json') }}
+        key: npm-${{ github.event.pull_request.head.ref }}-${{ hashFiles('package-lock.json') }}
         restore-keys: |
           npm-${{ github.event.pull_request.head.ref }}-
           npm-
