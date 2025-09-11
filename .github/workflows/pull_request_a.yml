@@ -1,0 +1,19 @@
+name: pull request A
+
+on:
+  pull_request
+
+jobs:
+  a:
+    runs-on: ubuntu-latest
+    steps:
+    - name: "Cache"
+      uses: actions/cache@v4
+      with:
+        path: |
+          ~/.npm
+          ~/.cache/Cypress
+        key: npm-${{ github.event.pull_request.head.ref }}-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          npm-${{ github.event.pull_request.head.ref }}-
+          npm-
