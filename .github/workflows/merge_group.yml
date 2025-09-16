@@ -1,0 +1,11 @@
+name: merge group
+
+on:
+  merge_group:
+    types: [checks_requested]
+    
+jobs:
+  a:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: raven-actions/debug@v1
