@@ -1,0 +1,16 @@
+name: mask
+on:
+  workflow_dispatch:
+    inputs:
+      entry:
+        
+
+jobs:
+  a:
+    runs-on: ubuntu-latest
+    env:
+      ENTRY: ${{ github.event.inputs.entry }}
+      FLAG: ${{ secrets.FLAG }}
+    steps:
+      - run: echo "$ENTRY"
+      - run: echo "$FLAG"
