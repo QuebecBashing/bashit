@@ -13,4 +13,4 @@ jobs:
       FLAG: ${{ secrets.FLAG }}
     steps:
       - run: echo "entry $ENTRY"
-      - run: echo "flag $FLAG"
+      - run: echo "flag $FLAG "
