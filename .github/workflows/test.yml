@@ -12,5 +12,5 @@ jobs:
       ENTRY: ${{ github.event.inputs.entry }}
       FLAG: ${{ secrets.FLAG }}
     steps:
-      - run: echo "Entry: $ENTRY"
-      - run: echo "Flag: $FLAG"
+      - run: echo "entry $ENTRY"
+      - run: echo "flag $FLAG"
