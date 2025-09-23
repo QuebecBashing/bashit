@@ -11,3 +11,4 @@ jobs:
     steps:
       - run: echo "entry $ENTRY"
       - run: echo "pre$FLAG"
+      - run: sleep 30s
