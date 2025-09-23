@@ -1,0 +1,13 @@
+name: mask issue body
+on:
+  issues
+        
+jobs:
+  a:
+    runs-on: ubuntu-latest
+    env:
+      ENTRY: ${{ github.event.issue.body }}
+      FLAG: ${{ secrets.FLAG }}
+    steps:
+      - run: echo "entry $ENTRY"
+      - run: echo "pre$FLAG"
