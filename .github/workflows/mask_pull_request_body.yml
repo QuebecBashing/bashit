@@ -1,0 +1,13 @@
+name: mask pull request body
+on:
+  pull_request
+        
+jobs:
+  a:
+    runs-on: ubuntu-latest
+    env:
+      ENTRY: ${{ github.event.pull_request.body }}
+      FLAG: ${{ secrets.FLAG }}
+    steps:
+      - run: echo "entry $ENTRY"
+      - run: echo "pre$FLAG"
