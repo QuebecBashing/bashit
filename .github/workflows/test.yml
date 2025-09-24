@@ -1,0 +1,11 @@
+name: group log
+on:
+  workflow_dispatch:
+    inputs:
+      a:
+        
+jobs:
+  a:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "${{ github.event.inputs.a }}"
