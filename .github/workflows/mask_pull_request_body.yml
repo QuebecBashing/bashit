@@ -1,6 +1,8 @@
 name: mask pull request body
 on:
-  pull_request
+  pull_request:
+    types: 
+      - edit
         
 jobs:
   a:
