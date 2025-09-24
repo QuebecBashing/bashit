@@ -8,4 +8,4 @@ jobs:
   a:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${{ github.events.inputs.a }}"
+      - run: echo "${{ github.event.inputs.a }}"
