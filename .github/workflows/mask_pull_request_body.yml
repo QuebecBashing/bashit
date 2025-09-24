@@ -7,9 +7,14 @@ on:
 jobs:
   a:
     runs-on: ubuntu-latest
+    steps:
+      - run: echo ""
+  b:
+    runs-on: ubuntu-latest
     env:
       ENTRY: ${{ github.event.pull_request.body }}
-      FLAG: ${{ secrets.FLAG }}
     steps:
       - run: echo "entry $ENTRY"
-      - run: echo "pre$FLAG"
+      - run: echo "flag"
+        env:
+          FLAG: ${{ secrets.FLAG }}
