@@ -1,3 +1,0 @@
-# bashita
-d
-asd
