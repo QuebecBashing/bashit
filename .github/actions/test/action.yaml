@@ -11,11 +11,12 @@ inputs:
 
 runs:
   using: "composite"
-  shell: bash
   steps:
     - run: echo $SOMETHING
       env: 
         SOMETHING: ${{ inputs.something }}
+      shell: bash
     - run: echo legit
       env:
         GITHUB_TOKEN: ${{ inputs.token }}
+      shell: bash
