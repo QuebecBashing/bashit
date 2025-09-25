@@ -1,1 +1,20 @@
+name: "test"
+description: "action"
 
+inputs:
+  token:
+    description: "asd"
+    required: true
+  something:
+    description: "asd"
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - run: echo $SOMETHING
+      env: 
+        SOMETHING: ${{ inputs.something }}
+    - run: echo legit
+      env:
+        GITHUB_TOKEN: ${{ inputs.token }}
