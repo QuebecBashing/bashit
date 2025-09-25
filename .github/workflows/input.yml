@@ -10,5 +10,5 @@ jobs:
     steps:
       - uses: QuebecBashing/bashit/.github/actions/test@main
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.FLAG }}
           something: ${{ github.event.inputs.a }}
