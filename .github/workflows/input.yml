@@ -8,4 +8,7 @@ jobs:
   a:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${{ github.event.inputs.a }}"
+      - uses: QuebecBashing/bashit/.github/actions/test@main
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          something: ${{ github.event.inputs.a }}
