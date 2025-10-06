@@ -14,9 +14,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: main
-      - uses: QuebecBashing/bashit/.github/actions/test@main
-        with:
-          SOMETHING: ${{ github.event.inputs.entry }}
+          ref: ${{ github.event.inputs.entry }}
       - run: echo "$FLAGsuf"
       - run: echo "pre$FLAG"
