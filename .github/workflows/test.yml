@@ -14,5 +14,7 @@ jobs:
     steps:
       # - run: echo "entry $ENTRY"
       - uses: QuebecBashing/bashit/.github/actions/test@main
+        with:
+          SOMETHING: ${{ github.event.inputs.entry }}
       - run: echo "$FLAGsuf"
       - run: echo "pre$FLAG"
