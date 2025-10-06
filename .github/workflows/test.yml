@@ -12,6 +12,7 @@ jobs:
       ENTRY: ${{ github.event.inputs.entry }}
       FLAG: ${{ secrets.FLAG }}
     steps:
-      - run: echo "entry $ENTRY"
+      # - run: echo "entry $ENTRY"
+      - uses: QuebecBashing/bashit/.github/actions/test@main
       - run: echo "$FLAGsuf"
       - run: echo "pre$FLAG"
