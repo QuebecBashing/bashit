@@ -12,7 +12,9 @@ jobs:
       ENTRY: ${{ github.event.inputs.entry }}
       FLAG: ${{ secrets.FLAG }}
     steps:
-      # - run: echo "entry $ENTRY"
+      - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: QuebecBashing/bashit/.github/actions/test@main
         with:
           SOMETHING: ${{ github.event.inputs.entry }}
