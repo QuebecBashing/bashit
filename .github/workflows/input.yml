@@ -7,7 +7,5 @@ jobs:
         runs-on: ubuntu-latest
         env:
             APP_CLIENT_SECRET: ${{ secrets.APP_CLIENT_SECRET }}
-            COMMENT: ${{ github.event.comment.body }}
         steps:
-            - run: echo "$COMMENT"
-            - run: echo "nothing"
+            - uses: raven-actions/debug@v1.2.0
