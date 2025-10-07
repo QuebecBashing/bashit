@@ -12,6 +12,11 @@ jobs:
       with:
         name: my-artifact
         path: file.txt
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: my-artifact-2
+        path: file.txt
   download:
     needs: upload
     runs-on: ubuntu-latest
