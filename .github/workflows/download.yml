@@ -20,6 +20,6 @@ jobs:
       uses: actions/download-artifact@v5
       with:
         path: my-artifact
-        pattern: my-artifact-*
+        pattern: my-artifa*
         merge-multiple: true
     - run: ls -R my-artifact
