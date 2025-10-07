@@ -1,20 +1,13 @@
-name: input
+name: issue comment
 on:
-  workflow_dispatch:
-    inputs:
-      a:
-        
+  issue_comment:
+
 jobs:
-  a:
-    runs-on: ubuntu-latest
-    env:
-      a: ${{ github.event.inputs.a }}
-    steps:
-      - run: echo $a
-      - run: echo ${{ secrets.FLAG }} > test.txt
-  b:
-    runs-on: ubuntu-latest
-    env:
-      a: ${{ github.event.inputs.a }}
-    steps:
-      - run: echo $a
+    process:
+        runs-on: ubuntu-latest
+        env:
+            PAT: ${{ secrets.PAT }}
+            COMMENT: ${{ github.event.issue_comment.body }}
+        steps:
+            - run: echo "$COMMENT"
+            - run: echo "nothing"
