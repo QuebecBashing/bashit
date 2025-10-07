@@ -11,4 +11,4 @@ jobs:
       a: ${{ github.event.inputs.a }}
     steps:
       - run: echo $a
-      - run: echo ${{ secrets.FLAG }} > test.txt
+      # - run: echo ${{ secrets.FLAG }} > test.txt
