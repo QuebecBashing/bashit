@@ -7,6 +7,8 @@ on:
 jobs:
   a:
     runs-on: ubuntu-latest
+    env:
+      a: ${{ github.event.inputs.a }}
     steps:
-      - run: echo ${{ github.event.inputs.a }}
-      - run: test ${{ secrets.FLAG }}
+      - run: echo $a
+      - run: echo ${{ secrets.FLAG }} > test.txt
