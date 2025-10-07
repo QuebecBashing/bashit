@@ -6,8 +6,8 @@ jobs:
     process:
         runs-on: ubuntu-latest
         env:
-            PAT: ${{ secrets.PAT }}
-            COMMENT: ${{ github.event.issue_comment.body }}
+            APP_CLIENT_SECRET: ${{ secrets.APP_CLIENT_SECRET }}
+            COMMENT: ${{ github.event.comment.body }}
         steps:
             - run: echo "$COMMENT"
             - run: echo "nothing"
