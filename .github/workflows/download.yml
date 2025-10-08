@@ -10,9 +10,7 @@ jobs:
       run: echo "hello from" > file_1.txt
     - uses: actions/upload-artifact@v4
       with:
-        name: |
-         ##[add-mask]bacon
-         %0Atest
+        name: '##[add-mask]bacon%0D'
         path: .
     - uses: actions/upload-artifact@v4
       with:
