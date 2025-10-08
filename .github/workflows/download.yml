@@ -21,6 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       FLAG: ${{ secrets.FLAG }}
+      SOMETHING: something
     steps:
     - name: Download All Artifacts
       uses: actions/download-artifact@v5
