@@ -8,7 +8,7 @@ jobs:
         env:
             DOUBLE_FLAG: ${{ secrets.DOUBLE_FLAG }}
             TEST: |
-              test
+              test'
               abc
         steps:
             - run: |
@@ -17,4 +17,5 @@ jobs:
                 echo "::add-mask::$NEW_TEST"
             - run: echo "$TEST" | base64
             - run: echo "\"$TEST\""
+            - run: echo "test%27"
 
