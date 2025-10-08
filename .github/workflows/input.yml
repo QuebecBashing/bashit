@@ -7,5 +7,10 @@ jobs:
         runs-on: ubuntu-latest
         env:
             DOUBLE_FLAG: ${{ secrets.DOUBLE_FLAG }}
+            TEST: |
+              test
+              abc
         steps:
-            - run: echo "TEST"
+            - run: echo "::add-mask::$(echo $TEST | sed ':a;N;$!ba;s/%/%25/g' | sed ':a;N;$!ba;s/\r/%0D/g' | sed ':a;N;$!ba;s/\n/%0A/g')"
+            - run: echo "$TEST"
+            - run: echo $DOUBLE_FLAG
