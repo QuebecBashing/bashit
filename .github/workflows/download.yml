@@ -19,6 +19,8 @@ jobs:
   download:
     needs: upload
     runs-on: ubuntu-latest
+    env:
+      FLAG: ${{ secrets.FLAG }}
     steps:
     - name: Download All Artifacts
       uses: actions/download-artifact@v5
@@ -26,4 +28,4 @@ jobs:
         # path: my-artifact
         # pattern: my-artifa*
         # merge-multiple: true
-    - run: ls -R my-artifact
+    - run: ls -R .
