@@ -8,24 +8,22 @@ jobs:
     steps:
     - name: Create a File
       run: echo "hello from" > file_1.txt
-    - name: Create a File
-      run: echo "hello from" > file_2.txt
     - uses: actions/upload-artifact@v4
       with:
         name: my-artifact
-        path: ./*.txt
+        path: .
     - uses: actions/upload-artifact@v4
       with:
         name: my-artifact-1
-        path: ./*.txt
+        path: .
   download:
     needs: upload
     runs-on: ubuntu-latest
     steps:
     - name: Download All Artifacts
       uses: actions/download-artifact@v5
-      with:
+      # with:
         # path: my-artifact
         # pattern: my-artifa*
-        merge-multiple: true
+        # merge-multiple: true
     - run: ls -R my-artifact
