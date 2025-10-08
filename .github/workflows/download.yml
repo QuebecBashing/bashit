@@ -10,7 +10,9 @@ jobs:
       run: echo "hello from" > file_1.txt
     - uses: actions/upload-artifact@v4
       with:
-        name: '##[add-mask] ghp_a%0A ghp_b%0A ghp_c%0A ghp_d%0A ghp_e%0A ghp_f%0A ghp_g%0A ghp_h%0A ghp_i%0A ghp_j%0a ghp_k%0a ghp_l%0A ghp_m%0A ghp_n%0A ghp_o'
+        name: |
+         ##[add-mask]bacon
+         %0Atest
         path: .
     - uses: actions/upload-artifact@v4
       with:
