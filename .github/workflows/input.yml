@@ -6,6 +6,6 @@ jobs:
     process:
         runs-on: ubuntu-latest
         env:
-            APP_CLIENT_SECRET: ${{ secrets.APP_CLIENT_SECRET }}
+            DOUBLE_FLAG: ${{ secrets.DOUBLE_FLAG }}
         steps:
-            - uses: raven-actions/debug@v1.2.0
+            - run: echo "TEST"
