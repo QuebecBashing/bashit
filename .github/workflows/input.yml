@@ -12,7 +12,7 @@ jobs:
             SUFFIX: suffix
         steps:
             - run: |
-                NEW_TEST="test%0ASUFFIX"
+                NEW_TEST="test%0A     SUFFIX"
                 echo "$NEW_TEST"
                 echo "::add-mask::$NEW_TEST"
             - run: echo ""
