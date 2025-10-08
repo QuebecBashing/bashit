@@ -14,7 +14,6 @@ jobs:
             - run: |
                 NEW_TEST=$(echo "$TEST" | sed ':a;N;$!ba;s/%/%25/g' | sed ':a;N;$!ba;s/\r/%0D/g' | sed ':a;N;$!ba;s/\n/%0A/g')
                 echo "$NEW_TEST"
-                echo "::add-mask::$NEW_TEST"
                 echo "::add-mask::TEST%3A $NEW_TEST"
             - run: echo "$NEW_TEST"
             - run: echo "$TEST"
