@@ -6,16 +6,14 @@ jobs:
     process:
         runs-on: ubuntu-latest
         env:
-            DOUBLE_FLAG: ${{ secrets.DOUBLE_FLAG }}
-            TEST: |
-              test'
-              abc
+            # DOUBLE_FLAG: ${{ secrets.DOUBLE_FLAG }}
+            PREFIX: prefix
+            TEST: test
+            SUFFIX: suffix
         steps:
             - run: |
-                NEW_TEST=$(echo "$TEST" | sed ':a;N;$!ba;s/%/%25/g' | sed ':a;N;$!ba;s/\r/%0D/g' | sed ':a;N;$!ba;s/\n/%0A/g')
+                NEW_TEST="test%0ASUFFIX"
                 echo "$NEW_TEST"
                 echo "::add-mask::$NEW_TEST"
-            - run: echo "$TEST" | base64
-            - run: echo "\"$TEST\""
-            - run: echo "test%27"
+            - run: echo ""
 
