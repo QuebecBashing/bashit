@@ -1,6 +1,6 @@
-name: issue comment
+name: input
 on:
-  issue_comment:
+  workflow_dispatch:
 
 jobs:
     process:
