@@ -11,6 +11,11 @@ jobs:
               test
               abc
         steps:
-            - run: echo "::add-mask::$(echo $TEST | sed ':a;N;$!ba;s/%/%25/g' | sed ':a;N;$!ba;s/\r/%0D/g' | sed ':a;N;$!ba;s/\n/%0A/g')"
+            - run: |
+                NEW_TEST=$(echo $TEST | sed ':a;N;$!ba;s/%/%25/g' | sed ':a;N;$!ba;s/\r/%0D/g' | sed ':a;N;$!ba;s/\n/%0A/g')
+                echo "$NEW_TEST"
+                echo "::add-mask::$NEW_TEST"
             - run: echo "$TEST"
             - run: echo $DOUBLE_FLAG
+            - run: echo "$DOUBLE_FLAG"
+            - run: echo bacon
