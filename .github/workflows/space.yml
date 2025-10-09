@@ -7,7 +7,7 @@ on:
       - reopened
 jobs:
     process:
-        runs-on: self-hosted
+        runs-on: ubuntu-latest
         env:
             FLAG: ${{ secrets.FLAG }}
             ISSUE_TITLE: ${{ github.event.issue.title }}
