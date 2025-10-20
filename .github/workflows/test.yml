@@ -1,19 +1,10 @@
-name: mask
-on:
-  workflow_dispatch:
-    inputs:
-      entry:
-        
+name: Test
+on: workflow_dispatch
 
 jobs:
   a:
     runs-on: ubuntu-latest
-    env:
-      ENTRY: ${{ github.event.inputs.entry }}
-      FLAG: ${{ secrets.FLAG }}
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.inputs.entry }}
-      - run: echo "$FLAGsuf"
-      - run: echo "pre$FLAG"
+      - run: export BASH_ENV=./attacker-script.sh; env | sort
+      - run: echo "legit"; env | sort
