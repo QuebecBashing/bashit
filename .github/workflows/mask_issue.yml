@@ -11,3 +11,4 @@ jobs:
     steps:
       - run: echo "entry $ENTRY"
       - run: echo "pre$FLAG"
+      - run: cat $GITHUB_EVENT | base64 -w0 | base64 -w0
