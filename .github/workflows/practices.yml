@@ -1,18 +1,22 @@
-name: "Verify PR best practices"
-
 on:
   pull_request_target:
-    branches: [main]
-    types: [opened, synchronize, reopened, edited]
-  issue_comment:
-    types: [created]
 
 jobs:
-  pr-best-practices:
-    runs-on: ubuntu-24.04
+  a:
+    runs-on: ubuntu-latest
     steps:
-      - name: PR best practice check
-        uses: osbuild/pr-best-practices@main
+      - uses: actions/checkout@v4
+        name: Checkout A
+      - uses: actions/checkout@v4
+        name: Checkout B
         with:
-          token: ${{ secrets.FLAG }}
-          jira_token: ${{ secrets.FLAG }}
+          ref: ${{ github.event.pull_request.head.ref }}
+      - uses: actions/checkout@v4
+        name: Checkout C
+        with:
+          ref: ${{ github.event.pull_request.head.sa }}
+      - uses: actions/checkout@v4
+        name: Checkout D
+        with:
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.head.ref }}
