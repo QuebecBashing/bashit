@@ -1,6 +1,7 @@
 name: Test
-on: workflow_dispatch
-
+on: 
+  pull_request_target:
+  
 jobs:
   a:
     runs-on: ubuntu-latest
