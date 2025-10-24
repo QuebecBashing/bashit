@@ -1,17 +1,9 @@
 name: input
 on:
   workflow_dispatch:
-  issues:
-    types:
-      - opened
-      - reopened
+
 jobs:
     process:
         runs-on: ubuntu-latest
-        env:
-            FLAG: ${{ secrets.FLAG }}
-            ISSUE_TITLE: ${{ github.event.issue.title }}
         steps:
-            - run: |
-                echo $ISSUE_TITLE | awk '{ print $2 }'
-            - run: echo ""
+            - uses: actions/checkout@v4
