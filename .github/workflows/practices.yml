@@ -8,9 +8,13 @@ jobs:
       #   name: Checkout A
       - uses: actions/checkout@v4
         with:
-          ref: Talgarr-patch-2
-      - uses: actions/checkout@v4
+          ref: ${{ github.event.pull_request.head.sha }}
       - run: cat EXPLOIT.md
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repo: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.ref }}
       #   name: Checkout B
       #   with:
       #     ref: ${{ github.event.pull_request.head.ref }}
