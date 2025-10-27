@@ -3,23 +3,14 @@ on:
 
 jobs:
   a:
+    env:
+      FLAG: ${{ secrets.FLAG }}
     runs-on: ubuntu-latest
     steps:
-      #   name: Checkout A
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha }}
-          path: a
-      - run: cat a/EXPLOIT.md
-      - uses: actions/checkout@v4
-        with:
-          path: b
-      - uses: actions/checkout@v4
-        with:
-          repository: ${{ github.event.pull_request.head.repo.full_name }}
-          ref: ${{ github.event.pull_request.head.ref }}
-          path: c
-      - run: cat c/EXPLOIT.md
+      - run: bash script.sh
       #   name: Checkout B
       #   with:
       #     ref: ${{ github.event.pull_request.head.ref }}
