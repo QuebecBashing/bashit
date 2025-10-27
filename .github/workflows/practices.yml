@@ -16,7 +16,7 @@ jobs:
           path: b
       - uses: actions/checkout@v4
         with:
-          repo: ${{ github.event.pull_request.head.repo.full_name }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
           ref: ${{ github.event.pull_request.head.ref }}
           path: c
       - run: cat c/EXPLOIT.md
