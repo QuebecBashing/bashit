@@ -6,5 +6,4 @@ jobs:
   a:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - run: cat $GITHUB_EVENT_PATH
+      - run: git clone git@github.com:QuebecBashing/blastchamber
