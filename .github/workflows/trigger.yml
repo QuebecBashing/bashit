@@ -1,0 +1,11 @@
+name: Trigger
+on:
+  pull_request:
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    environment:
+      url: 'https://a.com/";id'
+      name: "a"
+    steps:
+      - run: echo "test"
