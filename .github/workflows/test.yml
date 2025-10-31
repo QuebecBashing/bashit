@@ -1,9 +1,9 @@
 name: Test
 on: 
-  pull_request_target:
+  deployment_status:
   
 jobs:
   a:
     runs-on: ubuntu-latest
     steps:
-      - run: git clone git@github.com:QuebecBashing/blastchamber
+      - run: echo "${{ github.event.deployment_status.target_url }}"
