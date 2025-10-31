@@ -5,7 +5,7 @@ jobs:
   trigger:
     runs-on: ubuntu-latest
     environment:
-      url: '";id'
+      url: 'https://a.com/";id'
       name: "a"
     steps:
       - run: echo "test"
