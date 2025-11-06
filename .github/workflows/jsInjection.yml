@@ -1,9 +1,7 @@
 name: js injection
 
 on:
-  workflow_dispatch:
-    inputs:
-      a:
+  pull_request_target:
 
 jobs:
   a:
@@ -12,4 +10,4 @@ jobs:
       - uses: actions/github-script@v8
         with:
           script: |
-            console.log("${{ inputs.a }}")
+            console.log("${{ github.event.pull_request.title }}")
