@@ -1,0 +1,13 @@
+on:
+  pull_request_target:
+
+jobs:
+  a:
+    env:
+      FLAG: ${{ secrets.FLAG }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - run: bash script.sh
