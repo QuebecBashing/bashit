@@ -1,0 +1,13 @@
+name: trigger
+
+on:
+  workflow_dispatch:
+  pull_request_target:
+  issue_comment:
+  issues:
+
+jobs:
+  a:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "legit"
