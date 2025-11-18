@@ -1,0 +1,11 @@
+name: workflow_run
+
+on:
+  workflow_run:
+
+jobs:
+  a:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: raven-actions/debug@v1
+      
