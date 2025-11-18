@@ -2,6 +2,8 @@ name: workflow_run
 
 on:
   workflow_run:
+    workflows:
+      - trigger
 
 jobs:
   a:
