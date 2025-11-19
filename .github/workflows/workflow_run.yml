@@ -9,5 +9,6 @@ jobs:
   a:
     runs-on: ubuntu-latest
     steps:
+      - uses: raven-actions/debug@v1
       - run: echo ${{ github.event.workflow_run.head_commit.author.name }}
       
